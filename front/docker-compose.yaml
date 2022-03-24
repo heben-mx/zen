@@ -1,0 +1,19 @@
+version: '3.9' # optional since v1.27.0
+services:
+  docker-frontend:
+    build:
+      context: angular-server
+      dockerfile: Dockerfile.dev
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./angular-server/src:/frontend/src
+
+  docker-backend:
+    build:
+      context: json-server
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./json-server:/backend
