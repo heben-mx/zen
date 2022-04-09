@@ -1,20 +1,22 @@
 package com.heben.zen.user;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class User {
     private Long id;
     private String name;
     private String surname;
-    private int country;
+    private String country;
     private String phone_number;
     private String email;
-    private Date birth_date;
-    private int followers;
+    private LocalDate birth_date;
+    private int[] followers;
+    private int[] following;
     private Date creation_date;
     private Date last_update;
 
-    public User(Long id, String name, String surname, int country, String phone_number, String email, Date birth_date, int followers, Date creation_date, Date last_update) {
+    public User(Long id, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, int[] followers, int[] following, Date creation_date, Date last_update) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -23,11 +25,12 @@ public class User {
         this.email = email;
         this.birth_date = birth_date;
         this.followers = followers;
+        this.following = following;
         this.creation_date = creation_date;
         this.last_update = last_update;
     }
 
-    public User(String name, String surname, int country, String phone_number, String email, Date birth_date, int followers, Date creation_date, Date last_update) {
+    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, int[] followers, int[] following, Date creation_date, Date last_update) {
         this.name = name;
         this.surname = surname;
         this.country = country;
@@ -35,6 +38,7 @@ public class User {
         this.email = email;
         this.birth_date = birth_date;
         this.followers = followers;
+        this.following = following;
         this.creation_date = creation_date;
         this.last_update = last_update;
     }
@@ -63,11 +67,11 @@ public class User {
         this.surname = surname;
     }
 
-    public int getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(int country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
@@ -87,20 +91,28 @@ public class User {
         this.email = email;
     }
 
-    public Date getBirth_date() {
+    public LocalDate getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
     }
 
-    public int getFollowers() {
+    public int[] getFollowers() {
         return followers;
     }
 
-    public void setFollowers(int followers) {
+    public void setFollowers(int[] followers) {
         this.followers = followers;
+    }
+
+    public int[] getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(int[] following) {
+        this.following = following;
     }
 
     public Date getCreation_date() {
