@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "zen-social-media"
+  },
+  "targets": {
+    "zen-social-media": {
+      "hosting": {
+        "angular-server": [
+          "zen-social-media"
+        ]
+      }
+    }
+  }
+}

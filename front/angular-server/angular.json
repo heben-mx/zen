@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-server:build:production",
+            "firebaseProject": "zen-social-media",
+            "firebaseHostingSite": "zen-social-media"
+          }
         }
       }
     }
