@@ -1,20 +1,15 @@
-/* Import Bootstrap icons */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 html{
 
     /* Color Scheme */
     --color-dark: #212529;
-    --color-light: #f8f9fa;
-    --color-primary: #184e9f;
-    --color-secondary: #35577a;
+    --color-light: #ecedef;
+    --color-primary: 	hsl(216, 74%, 36%);
+    --color-secondary: #4da4b6f0;
     --color-success: #28a745;
     --color-danger: #dc3545;
     --color-white: #fff;
     --color-black: #000;
-    --color-gray: #6c757d;
+    --color-gray: #626b73;
 
     /* Padding */
     --card-padding:1rem;
@@ -31,6 +26,7 @@ html{
 
 }
 
+
 *, *
 ::before, *::after {
     margin: 0;
@@ -43,7 +39,7 @@ html{
 }
 
 body{
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
@@ -596,62 +592,183 @@ main .container .right{
     
 }
 
-/* .homePage{
-    width: 100%;
-    height: 100%;
+/* Theme */
 
-}
-
-.logo{
-    width: 90px;
-    height: 90px;
-    border-radius: 10%;
-    background-color: #18191A;
-    padding: 0px, 0px, 0px, 0px;
-} */
-/* 
-.homePageLanding{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: #18191A;
+.customizeTheme{
+    background: rgba(255,255,255,0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
+    place-items: center;
+    font-size: 0.9rem;
+}
+
+.customizeTheme .card{
+    background-color: white;
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+
+.customizeTheme .fontSize{
+    margin-top:3rem;
+}
+
+.customizeTheme .fontSize >div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding:var(--search-padding);
+    border-radius: var(--card-border-radius);
+    
+}
+
+.customizeTheme .chooseSize{
+    background: var(--color-secondary);
+    height: 0.3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customizeTheme .chooseSize span{
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.customizeTheme .chooseSize span.active{
+    background: var(--color-primary);
+}
+.customizeTheme .chooseSize > span:hover{
+    background: var(--color-primary);
+}
+
+.customizeTheme .chooseColor{
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.customizeTheme .chooseColor span{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
 
 }
 
-.bi-house-door {
-    font-size: 30px;
-    padding-right: 20px;
+
+.customizeTheme .chooseColor span:nth-child(1){
+    background: hsl(252, 75%, 60%);
 }
 
-.bi-play-btn{
-    font-size: 30px;
-    padding-right: 20px;
+.customizeTheme .chooseColor span:nth-child(2){
+    background: hsl(52, 75%, 60%);
+}
+
+.customizeTheme .chooseColor span:nth-child(3){
+    background: hsl(352, 75%, 60%);
+}
+
+.customizeTheme .chooseColor span:nth-child(5){
+    background: hsl(152, 75%, 60%);
+}
+
+.customizeTheme .chooseColor span:nth-child(6){
+    background: hsl(202, 75%, 60%);
+}
+
+.customizeTheme .chooseColor span.active{
+    border: 5px solid white;
+}
+.customizeTheme .chooseColor span.active:hover{
+    border: 5px solid white;
+}
+
+.customizeTheme .background{
+    margin-top: 1.4rem;
 
 }
 
-.bi-person-circle{
-    font-size: 30px;
-    padding-right: 20px;
+.customizeTheme .background h4{
+    bottom: 0.8rem;
+    position: relative;
 }
 
-.bi-file-earmark-post{
-    font-size: 30px;
-    padding-right: 20px;
+.customizeTheme .chooseBg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.customizeTheme .chooseBg > div{
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.customizeTheme .chooseBg > div:hover{
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 2px solid var(--color-primary)
+
+}
+
+.customizeTheme .chooseBg > div.active{
+    border: 2px solid var(--color-primary)
 
 }
 
 
 
-.form-control{
+.customizeTheme .chooseBg .bg1{
+    background: white;
+    color: black;
+}
+
+.customizeTheme .chooseBg .bg2{
+    background: hsl(252, 30%, 17%);
     color: white;
-    border-radius: 50px;
-    width: 300px;
+}
+.customizeTheme .chooseBg .bg3{
+    background: hsl(252, 30%, 10%);
+    color: white;
 }
 
-.container2{
-    background-color: aliceblue;
-} */
+.customizeTheme .chooseBg > div span{
+    width:2rem;
+    height: 2rem;
+    border:2px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* Media queries for small laptops ang big tablets */
+
+@media screen and (max-width: 1200px){
+}

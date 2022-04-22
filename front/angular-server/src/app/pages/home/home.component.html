@@ -7,13 +7,15 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="home.component.css" />
   </head>
+  <base href="/home">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <body>
     <nav>
       <div class="container">
-        <h2 class="logo">
-          <!-- <img src="./assets/ZEN_Logo.svg" class="d-inline-block align-center logo" alt="logo"> -->
+        <h1 class="logo">
           ZEN
-        </h2>
+        </h1>
         <div class="searchBar">
           <i class="bi bi-search"></i>
           <input type="search" placeholder="Search for content" />
@@ -425,7 +427,7 @@
               </div>
               <div class="action">
                 <button class="btn btnPrimary">Accept</button>
-                <button class="btn ">Decline</button>
+                <button class="btn">Decline</button>
               </div>
             </div>
             <div class="request">
@@ -440,7 +442,7 @@
               </div>
               <div class="action">
                 <button class="btn btnPrimary">Accept</button>
-                <button class="btn ">Decline</button>
+                <button class="btn">Decline</button>
               </div>
             </div>
             <div class="request">
@@ -455,79 +457,62 @@
               </div>
               <div class="action">
                 <button class="btn btnPrimary">Accept</button>
-                <button class="btn ">Decline</button>
+                <button class="btn">Decline</button>
               </div>
             </div>
           </div>
         </div>
+        <div class="customizeTheme">
+          <div class="card">
+            <h2>Customize your view</h2>
+            <p class="textMuted">Manage your font size, color or background.</p>
+            <div class="fontSize">
+              <h4>Font Size</h4>
+              <div>
+                <h6>Aa</h6>
+                <div class="chooseSize">
+                  <span class="fontSize1"></span>
+                  <span class="fontSize2 active"></span>
+                  <span class="fontSize3"></span>
+                  <span class="fontSize4"></span>
+                  <span class="fontSize5"></span>
+                </div>
+                <h3>Aa</h3>
+              </div>
+            </div>
+            <div class="color">
+              <h4>Color</h4>
+              <div class="chooseColor">
+                <span class="color1 active"></span>
+                <span class="color2 "></span>
+                <span class="color3 "></span>
+                <span class="color4 "></span>
+                <span class="color5 "></span>
+              </div>
+            </div>
+            <div class="background">
+          <h4>Background</h4>
+          <div class="chooseBg">
+
+            <div class="bg1">
+              <span></span>
+              <h5 for="bg1">Light</h5>
+            </div>
+            <div class="bg2 active">
+              <span></span>
+              <h5 for="bg2">Drakula</h5>
+            </div>
+            <div class="bg3">
+              <span></span>
+              <h5 for="bg3">Night Owl</h5>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        
       </div>
     </main>
   </body>
 </html>
-
-<!-- <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-
-    <title>Home</title>
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-light bg-dark">
-        <div class="container">
-  
-        <a href=# class="navbar-brand mb-0 h1">
-        </a>
-        <button 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarNav" 
-        class="navbar-toggler" 
-        aria-controls="navbarNav" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse " id="navbarNav">
-          
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a href="#" class="nav-link">
-                <i class="bi bi-house-door"></i>
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a href="#" class="nav-link"><i class="bi bi-play-btn"></i></a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a href="#" class="dropdown-item">Profile</a></li>
-                <li><a href="#" class="dropdown-item">Settings</a></li>
-                <li><a href="#" class="dropdown-item">Logout</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item active">
-              <a href="#" class="nav-link"><i class="bi bi-file-earmark-post"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="searchBox">
-          <form action="" class="d-flex form">
-            <i class="bi bi-search"></i>
-            <input type="text" class="form-control me-2 " placeholder="Search">
-          </form>
-        </div>
-      </div>
-      </nav>
-      <div class="container2"></div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
-</html>
- -->

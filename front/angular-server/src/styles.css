@@ -1,4 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Bootstrap icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html{
+
+    /* Color Scheme */
+    --color-dark: #212529;
+    --color-light: #f8f9fa;
+    --color-primary: #184e9f;
+    --color-secondary: #35577a;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray: #6c757d;
+
+    /* Padding */
+    --card-padding:1rem;
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+
+    /* sidebars */
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+
+
+}
