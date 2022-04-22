@@ -43,7 +43,7 @@ html{
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     color: var(--color-dark);
     background-color: var(--color-light);
     overflow-x: hidden;
@@ -75,6 +75,7 @@ img{
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    background: var(--color-light);
 }
 
 .btn:hover{
@@ -438,6 +439,7 @@ main .container .left .profile{
 }
 
 
+
 .middle .likedBy{
     display: flex;
 
@@ -493,14 +495,106 @@ main .container .right{
 
 }
 
-.right .messages .category{
+.right .messages .category {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
     font-weight: bold;
 }
+.right .messages .category h6{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--color-light);
+    padding-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.right .messages .category .active{
+    border-color: var(--color-dark);
+}
+
+.right .messages .messagesRequest{
+    color:var(--color-primary);
+}
+
+.right .messages .message{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+.right .message .profilePicture{
+    position: relative;
+    overflow: visible;
+}
 
 
+.right .profilePicture img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.right .messages .message:last-child{
+    margin:0;
+
+}
+
+
+.right .messages .message  p{
+    font-size: 0.8rem;
+}
+
+.right .messages .message .profilePicture .active{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background-color: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
+
+/* Right Request */
+
+.right .friendRequests{
+    margin-top: 1rem;
+
+}
+
+.right .friendRequests h4{
+    color: var(--color-gray);
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    
+
+}
+
+
+
+.right .request{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+}
+
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.right .request .action{
+    display: flex;
+    gap: 1rem;
+    
+}
 
 /* .homePage{
     width: 100%;
