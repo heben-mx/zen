@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     const theme = document.querySelector('#theme');
     const themeModal = document.querySelector('.customizeTheme');
     var html = document.querySelector('html');
+    const htmlSettings = document.querySelectorAll('html');
     // this is the variable that is used to change the font size
     const fontSize = document.querySelectorAll('.chooseSize span');
     // this is the variable that is used to change the color of the theme
@@ -81,31 +82,36 @@ export class HomeComponent implements OnInit {
     colorPalette.forEach((color) => {
 
       color.addEventListener('click', () => {
-        let colorPalette: any = color;
+        let colorPalette: any = color as HTMLSpanElement;
         changeActiveColorClass();
         color.classList.toggle('active');
-
-
+        
+        
         if (color.classList.contains('color1')) {
           colorPalette = '216';
-
-
+          
+          
         } else if (color.classList.contains('color2')) {
           colorPalette = '52';
-
+          
         } else if (color.classList.contains('color3')) {
           colorPalette = '352';
-
+          
         } else if (color.classList.contains('color4')) {
           colorPalette = '152';
 
         } else if (color.classList.contains('color5')) {
           colorPalette = '252';
-
+          
         }
+        htmlSettings.forEach(html => {
+          html.style.setProperty('--color-primary', 'hsl(' + colorPalette + ', 74%, 36%)');
+        })
 
-        html?.style.setProperty('--color-primary', 'hsl(' + colorPalette + ', 74%, 36%)');
-
+ 
+        // todo: change the color of the theme
+        // var property: any = html?.style.getPropertyValue('--color-primary');
+        // console.log(property);
       });
     });
 
@@ -186,11 +192,11 @@ export class HomeComponent implements OnInit {
     let darkColorLightness: any = 'hsl((210, 11%, 15%)';
     let whiteColorLightness: any = 'hsl(252, 30%, 100%)';
 
-    const changeBG = () => {
-      html?.style.setProperty('--light-color-lightness', lightColorLightness);
-      html?.style.setProperty('--dark-color-lightness', darkColorLightness);
-      html?.style.setProperty('--white-color-lightness', whiteColorLightness);
-    }
+    // const changeBG = () => {
+    //   html?.style.setProperty('--light-color-lightness', lightColorLightness);
+    //   html?.style.setProperty('--dark-color-lightness', darkColorLightness);
+    //   html?.style.setProperty('--white-color-lightness', whiteColorLightness);
+    // }
 
 
     Bg2?.addEventListener('click', () => {
@@ -203,7 +209,7 @@ export class HomeComponent implements OnInit {
       Bg1?.classList.remove('active');
       Bg3?.classList.remove('active');
 
-      changeBG();
+      // changeBG();
     });
 
 
