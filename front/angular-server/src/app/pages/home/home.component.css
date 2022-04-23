@@ -1,13 +1,15 @@
+
+
 html{
 
     /* Color Scheme */
-    --color-dark: #212529;
-    --color-light: #ecedef;
-    --color-primary: 	hsl(216, 74%, 36%);
-    --color-secondary: #4da4b6f0;
+    --color-dark: hsl(210, 11%, 15%);
+    --color-light: hsl(220, 9%, 93%);
+    --color-white: hsl(252, 30%, 100%);
+    --color-primary: hsl(216, 74%, 36%);
+    --color-secondary: hsl(190, 42%, 51%);
     --color-success: #28a745;
     --color-danger: #dc3545;
-    --color-white: #fff;
     --color-black: #000;
     --color-gray: #626b73;
 
@@ -686,7 +688,7 @@ main .container .right{
 
 
 .customizeTheme .chooseColor span:nth-child(1){
-    background: hsl(252, 75%, 60%);
+    background: hsl(216, 75%, 60%);
 }
 
 .customizeTheme .chooseColor span:nth-child(2){
@@ -702,7 +704,7 @@ main .container .right{
 }
 
 .customizeTheme .chooseColor span:nth-child(5){
-    background: hsl(202, 75%, 60%);
+    background: hsl(252, 75%, 60%);
 }
 
 .customizeTheme .chooseColor span.active{

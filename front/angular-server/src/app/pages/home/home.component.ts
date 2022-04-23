@@ -13,59 +13,113 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+    // these are the global variables that are used in the html
+
+    // this is the variable that is used to collapse the notifications
     const menuItems = document.querySelectorAll('.menuItem');
     const messagesNotifications = document.querySelector(
       '#message-notifications'
     );
+    // this is the variable that is used to show the messages
     const messages = document.querySelector('.messages');
     const message = (messages as HTMLDivElement).querySelectorAll('.message');
     const messageSearch = document.querySelector('#message-Search');
 
+    // These are the variables that are used to change the theme settings
     const theme = document.querySelector('#theme');
     const themeModal = document.querySelector('.customizeTheme');
+    var html = document.querySelector('html');
+    // this is the variable that is used to change the font size
     const fontSize = document.querySelectorAll('.chooseSize span');
-    var html = document.querySelector(':root');
+    // this is the variable that is used to change the color of the theme
+    const colorPalette = document.querySelectorAll('.chooseColor span');
+
+    const Bg1 = document.querySelector('.bg1')
+    const Bg2 = document.querySelector('.bg2')
+    const Bg3 = document.querySelector('.bg3')
 
     // Remove active class from all menu items
     const removeaActive = () => {
       menuItems.forEach((item) => item.classList.remove('active'));
     };
 
-    // Thme change
+    // Theme change
+
     // open modal
     const openThemeModal = () => {
       (themeModal as HTMLDivElement).style.display = 'grid';
     };
 
     // close modal
-
     const closeThemeModal = (e: any) => {
       if (e.target.classList.contains('customizeTheme')) {
         (themeModal as HTMLDivElement).style.display = 'none';
       }
     };
-    // Event listener for theme change
+    // Event listener to close modal
     themeModal?.addEventListener('click', closeThemeModal);
-    
+
+    // Event listener to open modal
     theme?.addEventListener('click', openThemeModal);
 
-    // Event listener for font size change
+    // font size change remove active class 
     const removeSizeSelector = () => {
-      fontSize.forEach(size =>{
+      fontSize.forEach(size => {
         size.classList.remove('active');
       })
     }
 
-    // Change color
+    // color change remove active class
+    const changeActiveColorClass = () => {
+      colorPalette.forEach(color => {
+        color.classList.remove('active');
+      })
+    }
+
+    // Function to change the color of the theme
+    colorPalette.forEach((color) => {
+
+      color.addEventListener('click', () => {
+        let colorPalette: any = color;
+        changeActiveColorClass();
+        color.classList.toggle('active');
+
+
+        if (color.classList.contains('color1')) {
+          colorPalette = '216';
+
+
+        } else if (color.classList.contains('color2')) {
+          colorPalette = '52';
+
+        } else if (color.classList.contains('color3')) {
+          colorPalette = '352';
+
+        } else if (color.classList.contains('color4')) {
+          colorPalette = '152';
+
+        } else if (color.classList.contains('color5')) {
+          colorPalette = '252';
+
+        }
+
+        html?.style.setProperty('--color-primary', 'hsl(' + colorPalette + ', 74%, 36%)');
+
+      });
+    });
+
+
+    // Fuction to change the font size of the theme
 
     fontSize.forEach((size) => {
-      
-      
+
+
       size.addEventListener('click', () => {
         removeSizeSelector();
         let fontSize: any = size;
         size.classList.toggle('active');
-        
+
         if (size.classList.contains('fontSize1')) {
           fontSize = '10px';
           (html as HTMLElement).style.setProperty(
@@ -76,6 +130,7 @@ export class HomeComponent implements OnInit {
             '--sticky-top-right',
             '5.4rem'
           );
+
         } else if (size.classList.contains('fontSize2')) {
           fontSize = '12px';
           (html as HTMLElement).style.setProperty(
@@ -124,6 +179,37 @@ export class HomeComponent implements OnInit {
 
     });
 
+
+
+
+    let lightColorLightness: any = 'hsl(220, 9%, 93%)';
+    let darkColorLightness: any = 'hsl((210, 11%, 15%)';
+    let whiteColorLightness: any = 'hsl(252, 30%, 100%)';
+
+    const changeBG = () => {
+      html?.style.setProperty('--light-color-lightness', lightColorLightness);
+      html?.style.setProperty('--dark-color-lightness', darkColorLightness);
+      html?.style.setProperty('--white-color-lightness', whiteColorLightness);
+    }
+
+
+    Bg2?.addEventListener('click', () => {
+      darkColorLightness = 'hsl((210, 11%, 95%)';
+      whiteColorLightness = 'hsl(252, 30%, 20%)';
+      lightColorLightness = 'hsl(220, 9%, 15%)';
+
+      Bg2.classList.add('active');
+
+      Bg1?.classList.remove('active');
+      Bg3?.classList.remove('active');
+
+      changeBG();
+    });
+
+
+
+
+
     // Search for messages
 
     // const searchMessage = () =>{
@@ -140,6 +226,7 @@ export class HomeComponent implements OnInit {
     //   })
 
     // }
+
 
     //   Add box-shadow to menu item
     (messagesNotifications as HTMLDivElement).addEventListener('click', () => {
@@ -160,7 +247,8 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    // Add active class to menu item
+
+    // Function to collapse and expand the notification menu
     menuItems.forEach((item) => {
       item.addEventListener('click', () => {
         removeaActive();
@@ -200,14 +288,7 @@ export class HomeComponent implements OnInit {
       });
     });
 
-    // Add active class to menu item
   }
 
-  // Theme
 
-  // const openThemeModal = () =>{
-  //   (themeModal).style.display = 'grid';
-  // }
-
-  // theme.addEventListener('click', openThemeModal);
 }
