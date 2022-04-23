@@ -56,11 +56,11 @@ body{
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 img{
     width: 160%;
-    display: block;
 }
 
 .btn{
@@ -110,13 +110,13 @@ nav .container{
     justify-content: space-between;
 }
 
-nav .searchBar{
+.searchBar{
     background: var(--color-light);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
 }
 
-nav .searchBar input[type="search"]{
+.searchBar input[type="search"]{
     background: transparent;
     width: 30vw;
     margin-left: 1rem;
@@ -124,7 +124,7 @@ nav .searchBar input[type="search"]{
     color: var(--color-dark);
 }
 
-nav .searchBar input[type="search"]::placeholder{
+.searchBar input[type="search"]::placeholder{
     color:var(--color-gray)
 }
 
@@ -145,8 +145,11 @@ nav .create{
 main{
     position: relative;
     top: 5.4rem;
+    margin: 0 35rem 0 8rem;
 }
 
+
+/* -------------------------------Sidebars----------------------------------- */
 main .container{
     display: grid;
     grid-template-columns: 18vw auto 20vw;
@@ -296,6 +299,7 @@ main .container .left .profile{
 /* Stories */
 
 .middle .stories{
+    grid-column: auto;
     display:flex;
     justify-content: space-between;
     height: 12rem;
@@ -488,8 +492,15 @@ main .container .right{
 .right .messages .searchBar{
     display: flex;
     margin-bottom: 1rem;
+    /* background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+    color: var(--color-light); */
+
 
 }
+
+
 
 .right .messages .category {
     display: flex;
@@ -606,6 +617,7 @@ main .container .right{
     display: grid;
     place-items: center;
     font-size: 0.9rem;
+    display: none; 
 }
 
 .customizeTheme .card{
@@ -613,6 +625,7 @@ main .container .right{
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--color-primary);
 }
 
 .customizeTheme .fontSize{
@@ -684,11 +697,11 @@ main .container .right{
     background: hsl(352, 75%, 60%);
 }
 
-.customizeTheme .chooseColor span:nth-child(5){
+.customizeTheme .chooseColor span:nth-child(4){
     background: hsl(152, 75%, 60%);
 }
 
-.customizeTheme .chooseColor span:nth-child(6){
+.customizeTheme .chooseColor span:nth-child(5){
     background: hsl(202, 75%, 60%);
 }
 
@@ -771,4 +784,175 @@ main .container .right{
 /* Media queries for small laptops ang big tablets */
 
 @media screen and (max-width: 1200px){
+    .container{
+        width: 96;
+    }
+
+    main .container{
+        grid-template-columns: 5rem auto 30vw;
+        gap: 1rem;
+    }
+    .left{
+        width: 5rem;
+        z-index: 5;
+    }
+
+    main .container .left .profile{
+        display: none;
+    }
+
+    .sidebar h3{
+        display: none;
+    }
+
+    .left .btn{
+        display: none;
+
+    }
+
+    .customizeTheme .card{
+        width: 90vw;
+
+    }
 }
+
+
+/* Media for small tablets and mobiles  */
+
+@media screen and (max-width: 1000px){
+    nav .logo{
+        position: relative;
+        right: 9rem;
+        font-size: 1.5rem;
+        display: flex;
+    }
+
+    nav .btn{
+        position: relative;
+        font-size: 0.5rem;
+        right: 0.4rem;
+    }
+
+
+    nav .searchBar{
+        position: relative;
+        left: -6rem;
+        font-size: 0.5rem;
+    }
+
+    nav .searchBar input[type="search"]{
+        font-size: 0.5rem;
+    }
+
+    main .container{
+        grid-template-columns:0 auto 5rem;
+        gap: 0;
+    }
+
+    main .container .left{
+        grid-column: 3/4;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+
+    }
+
+    .left .notificationsPopup{
+        position: absolute;
+        left: -20rem;
+        width: 20rem;
+    }
+
+    .left .notificationsPopup::before{
+        display: absolute;
+        top: 1.3rem;
+        left: calc(20rem - 0.6rem);
+        display:block;
+    }
+
+
+
+    main  .container .middle{
+        width: 80%;
+        grid-column: 1/3;
+        margin: 0 auto;
+        position: relative;
+        right: 4rem;
+    }
+    main .container .right{
+        display: none;
+    }
+
+    .customizeTheme .card{
+        width: 92vw;
+    }
+
+}
+/* @media screen and (min-width:1100px) {
+    nav .logo{
+        position: relative;
+        right:8.5rem;
+    }
+
+    nav .searchBar{
+        position: relative;
+        left: -9.5rem;
+    }
+    
+    nav .create{
+        position: relative;
+        left: -7.5rem;
+    }
+    
+} */
+/* 
+@media screen and (min-width: 3000px){
+
+
+    nav{
+        padding: 1rem 0;
+        position: fixed;
+        top: 0;
+    }
+
+    main{
+        position: relative;
+        top:8rem;
+        margin: 0 35rem 0 8rem;
+
+    }
+
+    .logo{
+        right: 10rem;
+        position: relative;
+    }
+    
+
+    nav .btn{
+        position: relative;
+        left: 2rem;
+    }
+
+    nav .searchBar input[type="search"]{
+        position: relative;
+        width: 30vw;
+        margin-left: 3rem;
+        top: -0.5rem;
+
+    }
+    
+
+    nav .profilePicture{
+        left:3rem;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        
+
+    }
+
+
+
+
+    
+} */

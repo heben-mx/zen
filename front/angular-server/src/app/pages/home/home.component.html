@@ -7,15 +7,16 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="home.component.css" />
   </head>
-  <base href="/home">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <base href="/home" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<script src="./home.component.js"></script>
 
   <body>
+
+
     <nav>
       <div class="container">
-        <h1 class="logo">
-          ZEN
-        </h1>
+        <h1 class="logo">ZEN</h1>
         <div class="searchBar">
           <i class="bi bi-search"></i>
           <input type="search" placeholder="Search for content" />
@@ -47,28 +48,28 @@
 
           <!-- Sidebar -->
           <div class="sidebar">
-            <a class="menuItem active">
+            <a class="menuItem">
               <span>
                 <i class="bi bi-house-door"></i>
               </span>
               <h3>HOME</h3>
             </a>
 
-            <a href="" class="menuItem">
+            <a  class="menuItem">
               <span>
                 <i class="bi bi-compass"></i>
               </span>
               <h3>EXPLORE</h3>
             </a>
-            <a href="" class="menuItem">
+            <a class="menuItem" id="notifications">
               <span>
                 <i class="bi bi-bell"
-                  ><small class="notificationCount">3+</small></i
+                  ><small class="notificationCount" id="notificationCount">3+</small></i
                 >
               </span>
               <h3>NOTIFICATIONS</h3>
               <!-- Popup -->
-              <div class="notificationsPopup">
+              <div class="notificationsPopup" >
                 <div>
                   <div class="profilePicture">
                     <img src="./assets/shrek.jpg" alt="" />
@@ -98,7 +99,7 @@
                 </div>
               </div>
             </a>
-            <a href="" class="menuItem" id="messagesNotifications">
+            <a class="menuItem" id="message-notifications">
               <span>
                 <i class="bi bi-envelope"
                   ><small class="notificationCount">6</small></i
@@ -106,21 +107,21 @@
               </span>
               <h3>MESSAGES</h3>
             </a>
-            <a href="" class="menuItem">
+            <a class="menuItem">
               <span><i class="bi bi-bookmark"></i></span>
               <h3>BOOKMARKS</h3>
             </a>
-            <a href="" class="menuItem">
+            <a  class="menuItem">
               <span><i class="bi bi-pencil"></i></span>
               <h3>BE PRODUCTIVE</h3>
             </a>
-            <a href="" class="menuItem">
+            <a class="menuItem" id="theme">
               <span>
                 <i class="bi bi-palette"></i>
               </span>
               <h3>THEME</h3>
             </a>
-            <a href="" class="menuItem">
+            <a  class="menuItem">
               <span>
                 <i class="bi bi-gear"></i>
               </span>
@@ -372,7 +373,7 @@
               <input
                 type="search"
                 placeholder="Search messages"
-                id="messageSearch"
+                id="message-Search"
               />
             </div>
             <div class="category">
@@ -484,35 +485,36 @@
               <h4>Color</h4>
               <div class="chooseColor">
                 <span class="color1 active"></span>
-                <span class="color2 "></span>
-                <span class="color3 "></span>
-                <span class="color4 "></span>
-                <span class="color5 "></span>
+                <span class="color2"></span>
+                <span class="color3"></span>
+                <span class="color4"></span>
+                <span class="color5"></span>
               </div>
             </div>
             <div class="background">
-          <h4>Background</h4>
-          <div class="chooseBg">
-
-            <div class="bg1">
-              <span></span>
-              <h5 for="bg1">Light</h5>
-            </div>
-            <div class="bg2 active">
-              <span></span>
-              <h5 for="bg2">Drakula</h5>
-            </div>
-            <div class="bg3">
-              <span></span>
-              <h5 for="bg3">Night Owl</h5>
+              <h4>Background</h4>
+              <div class="chooseBg">
+                <div class="bg1">
+                  <span></span>
+                  <h5 for="bg1">Light</h5>
+                </div>
+                <div class="bg2 active">
+                  <span></span>
+                  <h5 for="bg2">Drakula</h5>
+                </div>
+                <div class="bg3">
+                  <span></span>
+                  <h5 for="bg3">Dark</h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-          </div>
-        </div>
-
-        
       </div>
+      
+
     </main>
+
+
   </body>
 </html>
