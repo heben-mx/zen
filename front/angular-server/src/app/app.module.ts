@@ -6,10 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
-// import { AngularFireModule } from '@angular/fire';
 
-// import { FirebaseTSApp } from 'firebasets/firebasetsApp/firebaseTSApp';
-// import { environment } from 'src/environments/environment';
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -18,10 +15,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

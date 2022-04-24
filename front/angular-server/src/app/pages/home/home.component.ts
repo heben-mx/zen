@@ -1,4 +1,3 @@
-import { createMayBeForwardRefExpression } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { isEmpty } from '@firebase/util';
 
