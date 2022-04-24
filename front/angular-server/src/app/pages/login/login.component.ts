@@ -11,6 +11,26 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    const container = document.querySelector(".loginContainer"),
+        pwShowHide = document.querySelectorAll(".show"),
+        pwFields = document.querySelectorAll(".password");
+
+      pwShowHide.forEach(eyeIcon =>{
+        eyeIcon.addEventListener("click", () =>{
+          pwFields.forEach(pwField =>{
+            if((pwField as HTMLInputElement).type === "password"){
+              (pwField as HTMLInputElement).type = "text";
+
+            }else{
+              (pwField as HTMLInputElement).type = "password";
+            }
+          })
+
+        })
+        
+      })
+
   }
 
 }

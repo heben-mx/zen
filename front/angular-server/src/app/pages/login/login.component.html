@@ -24,8 +24,15 @@
     </div>
     <p>or</p>
     <form action="" class="inputContainer">
-      <input class="inputs" type="text" placeholder="Username" >
-      <input class="inputs" type="password" id="password" placeholder="Password" >
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Username" >
+        <i class="bi bi-person-circle"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs password" type="password" id="password" placeholder="Password" >
+        <i class="bi bi-lock-fill"></i>
+        <i class="bi bi-eye-slash show"></i>
+      </div>
       <p>Forgot password?
         <span class="Span">
           Click here
@@ -35,6 +42,61 @@
       <p>Don't have an account? <span class="Span">Sign Up</span></p>
     </form>
 
+    <!-- Registrarion form -->
+
+    <h1 class="title">Register</h1>
+    <div class="socialLogin">
+      <div class="socialLoginElement">
+        <img src="./assets/google.svg" alt="Google icon" >
+        <span>Google</span>
+      </div>
+      <div class="socialLoginElement">
+        <img src="./assets/facebook.svg" alt="Google icon">
+        <span>Facebook</span>
+      </div>
+    </div>
+    <p>or</p>
+    <form action="" class="inputContainer">
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Username" >
+        <i class="bi bi-person-circle"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Email" >
+        <i class="bi bi-envelope"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Name" >
+        <i class="bi bi-person-lines-fill"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Country" >
+        <i class="bi bi-flag"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Phone:(+52)" >
+        <i class="bi bi-telephone"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="date" name="birthday" id="birthday">
+      </div>
+      <div class="inputField">
+        <input class="inputs password" type="password" id="password" placeholder="Password" >
+        <i class="bi bi-lock-fill"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs password" type="password" id="password" placeholder="Confirm Password" >
+        <i class="bi bi-lock-fill"></i>
+        <i class="bi bi-eye-slash show"></i>
+      </div>
+      <p>Forgot password?
+        <span class="Span">
+          Click here
+        </span>
+      </p>
+      <button class="btn">Login</button>
+      <p>Don't have an account? <span class="Span">Sign Up</span></p>
+    </form>
   </div>
   <img src="./assets/login.svg" alt="Login" class="imageContainer">
 </div>
