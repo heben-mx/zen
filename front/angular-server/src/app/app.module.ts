@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
+import {LoginComponent} from './pages/login/login.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
 
 ];
 
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
   declarations: [	
     AppComponent,
     HomeComponent,
+    LoginComponent,
    ],
   imports: [
     BrowserModule,
