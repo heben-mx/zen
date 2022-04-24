@@ -3,10 +3,10 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html{
+/* html{ */
 
     /* Color Scheme */
-    --color-dark: #212529;
+    /* --color-dark: #212529;
     --color-light: #f8f9fa;
     --color-primary: #184e9f;
     --color-secondary: #35577a;
@@ -14,19 +14,19 @@ html{
     --color-danger: #dc3545;
     --color-white: #fff;
     --color-black: #000;
-    --color-gray: #6c757d;
+    --color-gray: #6c757d; */
 
     /* Padding */
-    --card-padding:1rem;
+    /* --card-padding:1rem;
     --border-radius: 2rem;
     --card-border-radius: 1rem;
     --btn-padding: 0.6rem 2rem;
-    --search-padding: 0.6rem 1rem;
+    --search-padding: 0.6rem 1rem; */
 
     /* sidebars */
 
-    --sticky-top-left: 5.4rem;
-    --sticky-top-right: -18rem;
+    /* --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem; */
 
 
-}
+/* } */

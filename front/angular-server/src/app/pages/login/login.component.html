@@ -4,11 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>login</title>
 </head>
 <base href="/login">
 <body>
-  {{ text }}
-    
+
+<div class="loginContainer">
+  <div class="loginInfoContainer">
+    <h1 class="title">Log in with</h1>
+    <div class="socialLogin">
+      <div class="socialLoginElement">
+        <img src="./assets/google.svg" alt="Google icon" >
+        <span>Google</span>
+      </div>
+      <div class="socialLoginElement">
+        <img src="./assets/facebook.svg" alt="Google icon">
+        <span>Facebook</span>
+      </div>
+    </div>
+    <p>or</p>
+    <form action="" class="inputContainer">
+      <input class="inputs" type="text" placeholder="Username" >
+      <input class="inputs" type="password" id="password" placeholder="Password" >
+      <p>Forgot password?
+        <span class="Span">
+          Click here
+        </span>
+      </p>
+      <button class="btn">Login</button>
+      <p>Don't have an account? <span class="Span">Sign Up</span></p>
+    </form>
+
+  </div>
+  <img src="./assets/login.svg" alt="Login" class="imageContainer">
+</div>
+  
 </body>
 </html>

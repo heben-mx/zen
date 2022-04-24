@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+html{
+    --login-bg: hsl(265, 100%, 98%);
+    --title-bg: hsl(246, 70%, 71%);
+    --button-bg: hsl(216, 74%, 36%);
+    --light-blue: hsl(211, 69%, 71%);
+    --image-bg: hsl(204, 63%, 86%);
+
+}
+
+body{
+    height: 100vh;
+    font-family: "Poppins", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-image: linear-gradient(to top, hsl(216, 74%, 36%) 0%, hsl(190, 42%, 51%) 100%);
+}
+
+.loginContainer{
+    position: relative;
+    top: -2rem;
+    height: 43.75em;
+    width: 60em;
+    margin: 6em auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.loginInfoContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background: var(--login-bg);
+}
+
+.imageContainer{
+    width:50%;
+    padding: 2rem;
+    background: var(--image-bg);
+    box-sizing: border-box;
+
+}
+
+.title{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--title-bg);
+    padding-bottom: 2.4rem;
+}
+
+.socialLogin{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.socialLoginElement{
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid var(--button-bg)
+}
+
+.socialLoginElement img{
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0rem;
+    right: 0.65rem;
+}
+
+.socialLoginElement:hover{
+    background: white;
+    cursor: pointer;
+    color: var(--light-blue);
+}
+
+.loginInfoContainer > p{
+    font-size: 1.25em;
+    margin-top: 1.5rem;
+}
+
+.inputContainer{
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputs .btn{
+    width: 90% !important;
+    height: 3.75rem !important;
+    font-size: 1rem !important;
+}
+
+.inputs{
+    padding-left: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.inputs:hover{
+    border: 2px solid var(--light-blue);
+}
+
+.btn{
+    width: 80%;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+}
+
+.btn:hover{
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.Span{
+    color: var(--light-blue);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* responsive */
+
+@media screen and (max-width: 1000px){
+    .imageContainer{
+        display: none;
+    }
+
+    .loginContainer{
+        width: 70%;
+        margin-top: 3rem;
+    }
+
+    .loginInfoContainer{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .loginContainer{
+        width: 90%;
+    }
+}
+
+ @media screen and (max-width: 500px){
+    .loginContainer{
+        height: 90%;
+    }
+
+    .socialLogin{
+        height: 20%;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }    
+
+    .loginInfoContainer > p{
+        margin: 0%;
+
+    }
+
+    .socialLoginElement{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
