@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
     colorPalette.forEach((color) => {
 
       color.addEventListener('click', () => {
-        let colorPalette: any = color as HTMLSpanElement;
+        let colorPalette: any = color as HTMLSpanElement ;
         changeActiveColorClass();
         color.classList.toggle('active');
         
@@ -104,14 +104,12 @@ export class HomeComponent implements OnInit {
           colorPalette = '252';
           
         }
+        // this is the variable that is used to change the color of all the elements with the var --color-primary
         htmlSettings.forEach(html => {
           html.style.setProperty('--color-primary', 'hsl(' + colorPalette + ', 74%, 36%)');
         })
 
- 
-        // todo: change the color of the theme
-        // var property: any = html?.style.getPropertyValue('--color-primary');
-        // console.log(property);
+
       });
     });
 
@@ -188,29 +186,53 @@ export class HomeComponent implements OnInit {
 
 
 
-    let lightColorLightness: any = 'hsl(220, 9%, 93%)';
-    let darkColorLightness: any = 'hsl((210, 11%, 15%)';
-    let whiteColorLightness: any = 'hsl(252, 30%, 100%)';
+    let darkColorLightness: string = '17%';
+    let lightColorLightness: string = '95%';
+    let whiteColorLightness: string = '100%';
 
-    // const changeBG = () => {
-    //   html?.style.setProperty('--light-color-lightness', lightColorLightness);
-    //   html?.style.setProperty('--dark-color-lightness', darkColorLightness);
-    //   html?.style.setProperty('--white-color-lightness', whiteColorLightness);
-    // }
+    const changeBG = () => {
+      htmlSettings.forEach(html => {
+        html.style.setProperty('--light-color-lightness', lightColorLightness);
+        html.style.setProperty('--dark-color-lightness', darkColorLightness);
+        html.style.setProperty('--white-color-lightness', whiteColorLightness);
+      })
+    }
+
+    Bg1?.addEventListener('click', () => {
+      Bg1.classList.add('active');
+      Bg2?.classList.remove('active');
+      Bg3?.classList.remove('active');
+
+      window.location.reload();
+    })
 
 
     Bg2?.addEventListener('click', () => {
-      darkColorLightness = 'hsl((210, 11%, 95%)';
-      whiteColorLightness = 'hsl(252, 30%, 20%)';
-      lightColorLightness = 'hsl(220, 9%, 15%)';
+      darkColorLightness = '95%';
+      whiteColorLightness = '20%';
+      lightColorLightness = '15%';
 
       Bg2.classList.add('active');
 
       Bg1?.classList.remove('active');
       Bg3?.classList.remove('active');
 
-      // changeBG();
+      changeBG();
     });
+
+    Bg3?.addEventListener('click', () => {
+      darkColorLightness = '95';
+      whiteColorLightness = '10';
+      lightColorLightness = '0%';
+
+      Bg3.classList.add('active');
+
+      Bg1?.classList.remove('active');
+      Bg2?.classList.remove('active');
+
+      changeBG();
+    });
+
 
 
 

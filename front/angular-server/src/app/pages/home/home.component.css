@@ -2,10 +2,15 @@
 
 html{
 
+    /* Light Scheme */
+    --dark-color-lightness:17%;
+    --light-color-lightness:95%;
+    --white-color-lightness:100%;
+    
     /* Color Scheme */
-    --color-dark: hsl(210, 11%, 15%);
-    --color-light: hsl(220, 9%, 93%);
-    --color-white: hsl(252, 30%, 100%);
+    --color-dark: hsl(210, 11%, var(--dark-color-lightness));
+    --color-light: hsl(220, 9%, var(--light-color-lightness));
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
     --color-primary: hsl(216, 74%, 36%);
     --color-secondary: hsl(190, 42%, 51%);
     --color-success: #28a745;
@@ -74,6 +79,7 @@ img{
     transition: all 0.3s ease;
     font-size: 0.9rem;
     background: var(--color-light);
+    color: var(--color-dark);
 }
 
 .btn:hover{
@@ -188,6 +194,7 @@ main .container .left .profile{
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    color: var(--color-dark);
 
 }
 
@@ -623,7 +630,7 @@ main .container .right{
 }
 
 .customizeTheme .card{
-    background-color: white;
+    background-color: var(--color-white);
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
