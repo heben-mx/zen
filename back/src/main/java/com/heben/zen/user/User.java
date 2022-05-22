@@ -1,9 +1,24 @@
 package com.heben.zen.user;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
+@Entity
+@Table
 public class User {
+
+    @Id
+    @SequenceGenerator(
+            name="user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
     private Long id;
     private String name;
     private String surname;
@@ -11,12 +26,14 @@ public class User {
     private String phone_number;
     private String email;
     private LocalDate birth_date;
-    private int[] followers;
-    private int[] following;
+    @ElementCollection
+    private List<Integer> followers;
+    @ElementCollection
+    private List<Integer> following;
     private Date creation_date;
     private Date last_update;
 
-    public User(Long id, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, int[] followers, int[] following, Date creation_date, Date last_update) {
+    public User(Long id, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, Date creation_date, Date last_update) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -30,7 +47,7 @@ public class User {
         this.last_update = last_update;
     }
 
-    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, int[] followers, int[] following, Date creation_date, Date last_update) {
+    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, Date creation_date, Date last_update) {
         this.name = name;
         this.surname = surname;
         this.country = country;
@@ -41,6 +58,10 @@ public class User {
         this.following = following;
         this.creation_date = creation_date;
         this.last_update = last_update;
+    }
+
+    public User() {
+
     }
 
     public Long getId() {
@@ -99,19 +120,19 @@ public class User {
         this.birth_date = birth_date;
     }
 
-    public int[] getFollowers() {
+    public List<Integer> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(int[] followers) {
+    public void setFollowers(List<Integer> followers) {
         this.followers = followers;
     }
 
-    public int[] getFollowing() {
+    public List<Integer> getFollowing() {
         return following;
     }
 
-    public void setFollowing(int[] following) {
+    public void setFollowing(List<Integer> following) {
         this.following = following;
     }
 

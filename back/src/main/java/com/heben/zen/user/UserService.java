@@ -3,14 +3,15 @@ package com.heben.zen.user;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Component
 public class UserService {
     public List<User> getUsers(){
-        int[] followers = {};
-        int[] following = {};
+        List<Integer> followers = new ArrayList<>();
+        List<Integer> following = new ArrayList<>();
         return List.of(new User(15L,
                 "Fred",
                 "Random",
