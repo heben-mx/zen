@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name="\"user\"")
 public class User {
 
     @Id
@@ -17,7 +17,7 @@ public class User {
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
+            generator = "user_sequence"
     )
     private Long id;
     private String name;
