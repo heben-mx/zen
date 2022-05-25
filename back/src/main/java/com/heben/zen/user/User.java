@@ -32,6 +32,7 @@ public class User {
     private List<Integer> following;
     private Date creation_date;
     private Date last_update;
+    private String password;
 
     public User(Long id, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, Date creation_date, Date last_update) {
         this.id = id;
@@ -58,6 +59,20 @@ public class User {
         this.following = following;
         this.creation_date = creation_date;
         this.last_update = last_update;
+    }
+
+    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, Date creation_date, Date last_update, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.country = country;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.birth_date = birth_date;
+        this.followers = followers;
+        this.following = following;
+        this.creation_date = creation_date;
+        this.last_update = last_update;
+        this.password = password;
     }
 
     public User() {
@@ -150,5 +165,13 @@ public class User {
 
     public void setLast_update(Date last_update) {
         this.last_update = last_update;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
