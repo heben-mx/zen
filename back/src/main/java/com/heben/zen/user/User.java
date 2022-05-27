@@ -1,7 +1,10 @@
 package com.heben.zen.user;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +36,8 @@ public class User {
     private Date creation_date;
     private Date last_update;
     private String password;
+    @Transient
+    private int age;
 
     public User(Long id, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, Date creation_date, Date last_update) {
         this.id = id;
@@ -173,5 +178,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getAge() {
+        return Period.between(this.birth_date, LocalDate.now()).getYears();
+    }
+
+    public void setAge() {
+        this.age = Period.between(this.birth_date, LocalDate.now()).getYears();
     }
 }
