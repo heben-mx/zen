@@ -23,8 +23,6 @@ public class UserConfig {
                     LocalDate.of(1990, 10, 5),
                     List.of(1),
                     List.of(2),
-                    new Date(),
-                    new Date(),
                     "test2022"
             );
             User Pancho = new User("Pancho",
@@ -35,8 +33,6 @@ public class UserConfig {
                     LocalDate.of(2005, 2, 25),
                     List.of(2),
                     List.of(1),
-                    new Date(),
-                    new Date(),
                     "test2022"
             );
             repository.saveAll(List.of(Fred, Pancho));

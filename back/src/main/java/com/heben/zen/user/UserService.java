@@ -16,4 +16,8 @@ public class UserService {
     public List<User> getUsers(){
         return userRepository.findAll();
     }
+
+    public static void addNewUser(User user) {
+        System.out.println(user);
+    }
 }
