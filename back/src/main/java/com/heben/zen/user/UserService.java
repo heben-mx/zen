@@ -3,6 +3,7 @@ package com.heben.zen.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UserService {
@@ -17,7 +18,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public static void addNewUser(User user) {
-        System.out.println(user);
+    public void addNewUser(User user) {
+        Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
+        if (userOptional.isPresent()) {
+            throw new IllegalStateException("Email taken");
+        }
+        userRepository.save(user);
     }
 }
