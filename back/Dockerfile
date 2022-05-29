@@ -1,4 +1,3 @@
 FROM openjdk:11
-EXPOSE 8080
-ADD target/zen.jar zen.jar
-ENTRYPOINT ["java", "-jar", "/zen.jar"]
+COPY target /home
+ENTRYPOINT ["java", "-jar", "/home/zen-api.jar"]
