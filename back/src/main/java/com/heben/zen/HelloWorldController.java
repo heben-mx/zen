@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @RequestMapping
     public String helloWorld() {
-        return "Hello World from Spring Boot";
-    }
-
-    @RequestMapping("/goodbye")
-    public String goodbye() {
-        return "Goodbye from Spring Boot";
+        return "Hello World from Zen";
     }
 }
