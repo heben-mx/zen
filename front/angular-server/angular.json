@@ -29,10 +29,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/popper.js/dist/popper.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./src/pages/home/home.component.js"
+              "./node_modules/popper.js/dist/popper.js"
             ]
           },
           "configurations": {
