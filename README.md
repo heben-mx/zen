@@ -1,6 +1,6 @@
-# Zen Project
+# Zen
 
-## Welcome to Zen!
+## Zen is a learning social media!
 
 **Here are some quick tips to start working:**
 
