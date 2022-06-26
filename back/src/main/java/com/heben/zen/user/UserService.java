@@ -2,6 +2,8 @@ package com.heben.zen.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +25,8 @@ public class UserService {
         if (userOptional.isPresent()) {
             throw new IllegalStateException("Email taken");
         }
+        user.setCreation_date(new Date());
+        user.setLast_update(new Date());
         userRepository.save(user);
     }
 }
