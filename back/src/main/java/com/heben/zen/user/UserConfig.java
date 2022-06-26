@@ -13,7 +13,8 @@ public class UserConfig {
     @Bean
     CommandLineRunner commandLineRunner(UserRepository repository){
         return args -> {
-            User Fred = new User("Fred",
+            User Fred = new User("logan123",
+                    "Fred",
                     "Random",
                     "Mexico",
                     "65465161",
@@ -21,7 +22,8 @@ public class UserConfig {
                     LocalDate.of(1990, 10, 5),
                     "test2022"
             );
-            User Pancho = new User("Pancho",
+            User Pancho = new User("spidy88",
+                    "Pancho",
                     "Random",
                     "Mexico",
                     "1231314",
