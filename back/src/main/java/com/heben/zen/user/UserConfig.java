@@ -1,12 +1,10 @@
 package com.heben.zen.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Configuration
