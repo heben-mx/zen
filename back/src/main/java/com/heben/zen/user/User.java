@@ -37,15 +37,13 @@ public class User {
     @Transient
     private int age;
 
-    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, List<Integer> followers, List<Integer> following, String password) {
+    public User(String name, String surname, String country, String phone_number, String email, LocalDate birth_date, String password) {
         this.name = name;
         this.surname = surname;
         this.country = country;
         this.phone_number = phone_number;
         this.email = email;
         this.birth_date = birth_date;
-        this.followers = followers;
-        this.following = following;
         this.creation_date = new Date();
         this.last_update = new Date();
         this.password = password;
