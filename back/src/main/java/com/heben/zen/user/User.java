@@ -1,15 +1,20 @@
 package com.heben.zen.user;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="\"user\"")
-public class User {
-
+public class User implements UserDetails {
     @Id
     @SequenceGenerator(
             name="user_sequence",
@@ -35,10 +40,12 @@ public class User {
     private Date creation_date;
     private Date last_update;
     private String password;
-    @Transient
-    private int age;
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole = UserRole.USER;
+    private Boolean locked = false;
+    private Boolean enabled = false;
 
-    public User(String username, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, String password) {
+    public User(String username, String name, String surname, String country, String phone_number, String email, LocalDate birth_date, String password, UserRole userRole) {
         this.username = username;
         this.name = name;
         this.surname = surname;
@@ -49,6 +56,7 @@ public class User {
         this.creation_date = new Date();
         this.last_update = new Date();
         this.password = password;
+        this.userRole = userRole;
     }
 
     public User() {
@@ -155,9 +163,6 @@ public class User {
         return Period.between(this.birth_date, LocalDate.now()).getYears();
     }
 
-    public void setAge() {
-        this.age = Period.between(this.birth_date, LocalDate.now()).getYears();
-    }
 
     public String getUsername() {
         return username;
@@ -166,4 +171,43 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+     public Collection<? extends GrantedAuthority> getAuthorities() {
+         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
+         return Collections.singletonList(authority);
+     }
+
+     @Override
+     public boolean isAccountNonExpired() {
+         return true;
+     }
+
+     @Override
+     public boolean isAccountNonLocked() {
+         return !locked;
+     }
+
+     @Override
+     public boolean isCredentialsNonExpired() {
+         return true;
+     }
+
+     @Override
+     public boolean isEnabled() {
+         return enabled;
+     }
+
 }
