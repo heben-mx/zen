@@ -1,17 +1,26 @@
 package com.heben.zen.registration;
 
+import com.heben.zen.registration.token.ConfirmationToken;
+import com.heben.zen.registration.token.ConfirmationTokenService;
 import com.heben.zen.user.User;
 import com.heben.zen.user.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
 
 @Service
 public class RegistrationService {
     private final UserService userService;
     private final EmailValidator emailValidator;
+    private final ConfirmationTokenService confirmationTokenService;
 
-    RegistrationService(UserService userService, EmailValidator emailValidator){
+    RegistrationService(UserService userService,
+                        EmailValidator emailValidator,
+                        ConfirmationTokenService confirmationTokenService){
         this.userService = userService;
         this.emailValidator = emailValidator;
+        this.confirmationTokenService = confirmationTokenService;
     }
     public String register(RegistrationRequest request) {
         boolean valid_email = emailValidator.test(request.getEmail());
@@ -27,5 +36,19 @@ public class RegistrationService {
                 request.getPassword(),
                 request.getUserRole()
         ));
+    }
+
+    @Transactional
+    public String confirm(String token){
+        ConfirmationToken confirmationToken = confirmationTokenService.getToken(token)
+                .orElseThrow(()-> new IllegalArgumentException("Token not found"));
+        if (confirmationToken.getConfirmedAt() != null) throw new IllegalStateException();
+        LocalDateTime expiredAt = confirmationToken.getExpiresAt();
+        if (expiredAt.isBefore(LocalDateTime.now())){
+            throw new IllegalStateException("token expired");
+        }
+        confirmationTokenService.setConfirmedAt(token);
+        userService.enableUser(confirmationToken.getUser().getEmail());
+        return "confirmed";
     }
 }
