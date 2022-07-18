@@ -63,6 +63,12 @@ public class RegistrationService {
         }
         confirmationTokenService.setConfirmedAt(token);
         userService.enableUser(confirmationToken.getUser().getEmail());
+        /* TODO: Improve response
+        - Message
+        - Error
+        - Success
+        - Status
+         */
         return "confirmed";
     }
 }

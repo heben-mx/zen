@@ -36,6 +36,8 @@ public class UserService implements UserDetailsService {
     public String addNewUser(User user) {
         Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
         if (userOptional.isPresent()) {
+            // TODO check if attributes are the same and
+            // TODO if email not confirmed send again confirmation email.
             throw new IllegalStateException("Email taken");
         }
         String encoded_password = bCryptPasswordEncoder.encode(user.getPassword());
