@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    --login-bg: hsl(265, 100%, 98%);
+    --title-bg: hsl(246, 70%, 71%);
+    --button-bg: hsl(216, 74%, 36%);
+    --light-blue: hsl(211, 69%, 71%);
+    --image-bg: hsl(204, 63%, 86%);
+
+    font-family: "Poppins", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    
+}
+
+.form-control:hover {
+    box-shadow: none;
+    border: 2px solid var(--light-blue);
+}
+
+.profile-button {
+    width: 80%;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+}
+
+.profile-button:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience{
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+}

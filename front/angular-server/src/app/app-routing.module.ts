@@ -4,12 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { EditProfile } from './pages/editprofile/editprofile.component';
+
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'notfound', component: NotfoundComponent},
+  {path: 'editprofile', component: EditProfile},
+  {path: '**', component: NotfoundComponent},
+  
 
 ];
 
@@ -20,3 +24,4 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
