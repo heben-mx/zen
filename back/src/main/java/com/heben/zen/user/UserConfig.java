@@ -20,7 +20,8 @@ public class UserConfig {
                     "65465161",
                     "fake@email.com",
                     LocalDate.of(1990, 10, 5),
-                    "test2022"
+                    "test2022",
+                    UserRole.USER
             );
             User Pancho = new User("spidy88",
                     "Pancho",
@@ -29,7 +30,8 @@ public class UserConfig {
                     "1231314",
                     "lol@email.com",
                     LocalDate.of(2005, 2, 25),
-                    "test2022"
+                    "test2022",
+                    UserRole.USER
             );
             repository.saveAll(List.of(Fred, Pancho));
         };

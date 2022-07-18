@@ -2,7 +2,6 @@ package com.heben.zen.user;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
