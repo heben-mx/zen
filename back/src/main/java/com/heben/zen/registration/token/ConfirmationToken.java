@@ -1,7 +1,6 @@
 package com.heben.zen.registration.token;
 
 import com.heben.zen.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -42,5 +41,25 @@ public class ConfirmationToken {
 
     public ConfirmationToken() {
 
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public LocalDateTime getConfirmedAt() {
+        return confirmedAt;
+    }
+
+    public void setConfirmedAt(LocalDateTime confirmedAt) {
+        this.confirmedAt = confirmedAt;
+    }
+
+    public LocalDateTime getExpiresAt() {
+        return expiresAt;
+    }
+
+    public User getUser() {
+        return user;
     }
 }
