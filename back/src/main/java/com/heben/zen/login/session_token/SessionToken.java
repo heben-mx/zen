@@ -19,11 +19,13 @@ public class SessionToken {
 
     private final String username;
     private final String token;
+    private boolean expired;
 
 
-    SessionToken(String username, String token){
+    public SessionToken(String username, String token){
         this.username = username;
         this.token = token;
+        this.expired = false;
     }
 
     public SessionToken() {
@@ -39,5 +41,7 @@ public class SessionToken {
         return token;
     }
 
-
+    public void setExpired(boolean expired) {
+        this.expired = expired;
+    }
 }
