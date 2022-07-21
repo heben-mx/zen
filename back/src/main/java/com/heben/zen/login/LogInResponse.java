@@ -6,8 +6,8 @@ import com.heben.zen.security.Response;
 public class LogInResponse extends Response {
     private final SessionToken token;
 
-    public LogInResponse(short status, String message, boolean error, SessionToken token){
-        super(status, error, message);
+    public LogInResponse(short status, String message, String error, boolean success ,SessionToken token){
+        super(status, error, message, success);
         this.token = token;
     }
 

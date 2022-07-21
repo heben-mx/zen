@@ -43,7 +43,7 @@ public class LogInService {
         } else {
             if (bCryptPasswordEncoder.matches(password, userDetails.getPassword())){
 
-                return new LogInResponse((short) 200,"OK", false , sessionTokenService.generateNewToken(username));
+                return new LogInResponse((short) 200,"OK", null , true,sessionTokenService.generateNewToken(username));
             } else {
                 throw new IllegalAccessException("Wrong password.");
             }
@@ -56,6 +56,6 @@ public class LogInService {
         if (sessionToken.isEmpty()){
             throw new IllegalArgumentException("Session token doesn't exist");
         }
-        return new Response((short) 200, false, "Success");
+        return new Response((short) 200, null, "Success", true );
     }
 }
