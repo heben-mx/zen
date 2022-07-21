@@ -4,6 +4,7 @@ import com.heben.zen.email.EmailSender;
 import com.heben.zen.email.EmailService;
 import com.heben.zen.registration.token.ConfirmationToken;
 import com.heben.zen.registration.token.ConfirmationTokenService;
+import com.heben.zen.security.Response;
 import com.heben.zen.user.User;
 import com.heben.zen.user.UserService;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class RegistrationService {
         this.emailSender = emailSender;
         this.emailService = emailService;
     }
-    public String register(RegistrationRequest request) {
+    public Response register(RegistrationRequest request) {
         boolean valid_email = emailValidator.test(request.getEmail());
         if (!valid_email) throw new IllegalArgumentException("email not valid");
         String token = userService.addNewUser(new User(
@@ -49,7 +50,7 @@ public class RegistrationService {
                 request.getEmail(),
                 emailService.buildRegistrationConfirmationEmail(request.getName(),
                         link));
-        return token;
+        return new Response((short) 200, false, "Success");
     }
 
     @Transactional

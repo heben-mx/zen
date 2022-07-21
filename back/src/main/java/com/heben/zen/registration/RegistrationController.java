@@ -1,5 +1,6 @@
 package com.heben.zen.registration;
 
+import com.heben.zen.security.Response;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,7 +13,7 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String register(@RequestBody RegistrationRequest request){
+    public Response register(@RequestBody RegistrationRequest request){
         return  registrationService.register(request);
     }
 
