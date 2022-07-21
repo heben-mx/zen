@@ -3,11 +3,13 @@ package com.heben.zen.security;
 public class Response {
     private final short status;
     private final String message;
-    private  final boolean error;
-    public Response(short status, boolean error, String message){
+    private  final String error;
+    private final boolean success;
+    public Response(short status, String error, String message, boolean success){
         this.status = status;
         this.message = message;
         this.error = error;
+        this.success = success;
     }
 
     public short getStatus() {
@@ -18,7 +20,11 @@ public class Response {
         return message;
     }
 
-    public boolean isError() {
+    public String getError() {
         return error;
+    }
+
+    public boolean isSuccess() {
+        return success;
     }
 }

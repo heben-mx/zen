@@ -50,7 +50,7 @@ public class RegistrationService {
                 request.getEmail(),
                 emailService.buildRegistrationConfirmationEmail(request.getName(),
                         link));
-        return new Response((short) 200, false, "Success");
+        return new Response((short) 200, null, "Success", true);
     }
 
     @Transactional
