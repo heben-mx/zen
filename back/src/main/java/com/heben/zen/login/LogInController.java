@@ -1,5 +1,7 @@
 package com.heben.zen.login;
 
+import com.heben.zen.login.session_token.ContinueSessionRequest;
+import com.heben.zen.security.Response;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,7 +14,12 @@ public class LogInController {
     }
 
     @PostMapping
-    public String logInUser(@RequestBody LogInRequest request) throws IllegalAccessException {
+    public LogInResponse logInUser(@RequestBody LogInRequest request) throws IllegalAccessException {
         return logInService.logIn(request);
+    }
+
+    @PutMapping
+    public Response continueLogin(@RequestBody ContinueSessionRequest request){
+        return logInService.validateSession(request);
     }
 }
