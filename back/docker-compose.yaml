@@ -10,6 +10,9 @@ services:
       - POSTGRES_PASSWORD=zen
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    networks:
+      server-net:
+        ipv4_address: 172.19.0.3
 
   api:
     container_name: api
@@ -17,8 +20,12 @@ services:
     restart: always
     depends_on:
       - postgres-db
+      - mail-server
     ports:
       - "8080:8080"
+    networks:
+      server-net:
+        ipv4_address: 172.19.0.2
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/heben
       - SPRING_DATASOURCE_USERNAME=heben
@@ -31,12 +38,32 @@ services:
       - SPRING_DATASOURCE_HIKARI_CONNECTION-TIMEOUT=20000
       - SPRING_DATASOURCE_HIKARI_MAXIMUM-POOL-SIZE=5
       - SERVER_ERROR_INCLUDE-MESSAGE=always
+      - SPRING_MAIL_HOST=172.19.0.4
+      - SPRING_MAIL_PORT=1025
+      - SPRING_MAIL_USERNAME=hello
+      - SPRING_MAIL_PASSWORD=hello
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
+
+  mail-server:
+    container_name: mail-server
+    image: maildev/maildev:2.0.5
+    networks:
+      server-net:
+        ipv4_address: 172.19.0.4
+    ports:
+      - "1080:1080"
+      - "1025:1025"
 
 volumes:
   postgres-data:
     driver: local
 
-
+networks:
+  server-net:
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
 
 
 
