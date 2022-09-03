@@ -1,3 +1,77 @@
-<p>
-  register works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+</head>
+<base href="/register">
+<body>
+
+<div class="loginContainer">
+  <div class="loginInfoContainer">
+  
+    <!-- Registrarion form -->
+
+    <h1 class="title">Register</h1>
+    <div class="socialLogin">
+      <div class="socialLoginElement">
+        <img src="./assets/google.svg" alt="Google icon" >
+        <span>Google</span>
+      </div>
+      <div class="socialLoginElement">
+        <img src="./assets/facebook.svg" alt="Google icon">
+        <span>Facebook</span>
+      </div>
+    </div>
+    <p>or</p>
+    <form action="" class="inputContainer">
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Username" >
+        <i class="bi bi-person-circle"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Email" >
+        <i class="bi bi-envelope"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Name" >
+        <i class="bi bi-person-lines-fill"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Country" >
+        <i class="bi bi-flag"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="text" placeholder="Phone:(+52)" >
+        <i class="bi bi-telephone"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs" type="date" name="birthday" id="birthday">
+      </div>
+      <div class="inputField">
+        <input class="inputs password" type="password" id="password" placeholder="Password" >
+        <i class="bi bi-lock-fill"></i>
+      </div>
+      <div class="inputField">
+        <input class="inputs password" type="password" id="password" placeholder="Confirm Password" >
+        <i class="bi bi-lock-fill"></i>
+        <i class="bi bi-eye-slash show"></i>
+      </div>
+      <p>Forgot password?
+        <span class="Span">
+          Click here
+        </span>
+      </p>
+      <button class="btn">Register</button>
+      <p>Do you have an account? <span class="Span">
+        <a href="/login">Login</a>
+      </span></p>
+    </form>
+  </div>
+  <img src="./assets/login.svg" alt="Login" class="imageContainer">
+</div>
+  
+</body>
+</html>
