@@ -14,6 +14,7 @@
 
         <h1 class="title">Register</h1>
         <div class="socialLogin">
+          <!-- Auth -->
           <div class="socialLoginElement">
             <img src="./assets/google.svg" alt="Google icon" />
             <span>Google</span>
@@ -23,30 +24,62 @@
             <span>Facebook</span>
           </div>
         </div>
-        <p>or</p>
-        <form action="" class="inputContainer">
+        <!-- User Form -->
+        <form class="inputContainer" [formGroup]="registrationForm" action="">
           <div class="inputField">
-            <input class="inputs" type="text" placeholder="Username" />
+            <input
+              class="inputs"
+              type="text"
+              placeholder="Username"
+              id="username"
+              formControlName="username"
+              ngModel
+            />
             <i class="bi bi-person-circle"></i>
           </div>
           <div class="inputField">
-            <input class="inputs" type="text" placeholder="Email" />
+            <input
+              class="inputs"
+              type="text"
+              placeholder="Email"
+              id="email"
+              formControlName="email"
+              ngModel
+            />
             <i class="bi bi-envelope"></i>
           </div>
           <div class="inputField">
-            <input class="inputs" type="text" placeholder="Name" />
+            <input
+              class="inputs"
+              type="text"
+              placeholder="Name"
+              id="name"
+              formControlName="name"
+              ngModel
+            />
             <i class="bi bi-person-lines-fill"></i>
           </div>
           <div class="inputField">
-            <input class="inputs" type="text" placeholder="Country" />
+            <input class="inputs" type="text" placeholder="Country" ngModel />
             <i class="bi bi-flag"></i>
           </div>
           <div class="inputField">
-            <input class="inputs" type="text" placeholder="Phone:(+52)" />
+            <input
+              class="inputs"
+              type="text"
+              placeholder="Phone:(+52)"
+              formControlName="phone"
+            />
             <i class="bi bi-telephone"></i>
           </div>
           <div class="inputField">
-            <input class="inputs" type="date" name="birthday" id="birthday" />
+            <input
+              class="inputs"
+              type="date"
+              name="birthday"
+              id="birthday"
+              formControlName="birthday"
+            />
           </div>
           <div class="inputField">
             <input
@@ -54,6 +87,7 @@
               type="text"
               id="password"
               placeholder="Password"
+              formControlName="password"
             />
             <i class="bi bi-lock-fill"></i>
           </div>
@@ -63,13 +97,15 @@
               type="password"
               id="password"
               placeholder="Confirm Password"
+              formControlName="password2"
             />
             <span class="lock"><i class="bi bi-lock-fill"></i></span>
             <span class="show-btn password">
               <i class="eye bi bi-eye-fill" id="eye"></i>
             </span>
           </div>
-          <button class="btn">Register</button>
+          <!-- Submit form -->
+          <button class="btn" type="submit" id="register">Register</button>
           <p>
             Do you have an account?
             <span class="Span">

@@ -22,7 +22,7 @@ body{
     position: relative;
     top: -2rem;
     height: fit-content;
-    width: 60em;
+    width: 65em;
     margin: 6em auto;
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,10 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-
+}
+.Or{
+    font-size: 1.25em;
+    margin-top: 0.8rem;
 }
 
 .socialLoginElement{
@@ -91,10 +94,7 @@ body{
     color: var(--light-blue);
 }
 
-.loginInfoContainer > p{
-    font-size: 1.25em;
-    margin-top: 1.5rem;
-}
+
 
 .inputContainer{
     height: 55%;
@@ -103,7 +103,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 7rem;
 }
 
 .inputField {
@@ -140,17 +140,15 @@ body{
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-}
-
-
-
-.inputs{
     padding-left: 2rem;
     border: none;
     border-radius: 5px;
     font-weight: 600;
     letter-spacing: 1px;
 }
+
+
+
 
 .inputs:hover{
     border: 2px solid var(--light-blue);
@@ -177,19 +175,14 @@ body{
     cursor: pointer;
 }
 
-.inputContainer .inputField .show-btn{
+.show-btn{
     position: absolute;
-    top: 0.1rem;
-    left: 18rem;
-    transform: translateY(-50%);
+    right: 2rem;
+    bottom: 4.3rem;
     cursor: pointer;
-    display: block;
-}
-
-.inputContainer .inputField .show-btn i.hide-btn::before{
-    content: "bi bi-eye-slash-fill";
 
 }
+
 
 /* responsive */
 

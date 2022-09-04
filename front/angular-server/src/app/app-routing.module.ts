@@ -6,24 +6,26 @@ import { LoginComponent } from './pages/login/login.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { EditProfile } from './pages/editprofile/editprofile.component';
 import { RegisterComponent } from './pages/register/register.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent},
-  {path: 'editprofile', component: EditProfile},
-  {path: 'register', component: RegisterComponent},
-  {path: '**', component: NotfoundComponent},
-  
-
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'editprofile', component: EditProfile },
+  { path: 'register', component: RegisterComponent },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
   imports: [
-    BrowserModule ,RouterModule.forRoot(appRoutes),
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
