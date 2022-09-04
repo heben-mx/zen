@@ -110,6 +110,7 @@ body{
     width: 80%;
     position: relative;
     padding-bottom: 2rem;
+    /* hide */
 }
 
 .inputField input{
@@ -129,30 +130,6 @@ body{
     font-size: 1.2rem;
 }
 
-.inputField i.show{
-    left: 18rem;
-}
-
-
-.password .lock{
-    display: flex;
-    position: relative;
-    top: 1.5rem;
-    left: 0.5rem;
-    width: 5px;
-}
-
-.password .eye{
-    display:flex;
-    position: relative;
-    top: -1.8rem;
-    left: 16rem;
-    cursor: pointer;
-    color: black;
-}
-
-
-
 
 .inputs{
     width: 100%;
@@ -165,11 +142,7 @@ body{
     letter-spacing: 0.5px;
 }
 
-.inputs .btn{
-    width: 90%;
-    height: 3.75rem;
-    font-size: 1rem;
-}
+
 
 .inputs{
     padding-left: 2rem;
@@ -202,6 +175,20 @@ body{
     color: var(--light-blue);
     font-weight: 600;
     cursor: pointer;
+}
+
+.inputContainer .inputField .show-btn{
+    position: absolute;
+    top: 0.1rem;
+    left: 18rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: block;
+}
+
+.inputContainer .inputField .show-btn i.hide-btn::before{
+    content: "bi bi-eye-slash-fill";
+
 }
 
 /* responsive */
