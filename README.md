@@ -1,26 +1,18 @@
 # Zen
 
-## Zen is a learning social media!
+![Logo](image/README/logo.png)
 
-**Here are some quick tips to start working:**
+> Zen is a learning social media!
 
-Once your are located on the Zen repo, make sure to "git clone" this repo with the following
-URL:[https://github.com/heben-mx/zen.git
-]()
+## Starting with zen
+___
 
----
+### Using Docker
 
-* **How to use branches:**
+> It's the easiest way of getting started with Zen
 
-  To create a branch use the following command (**make sure to locate yourself on the directory where the repo is
-  located**)):
+- On both ***front*** and ***back***  folders (in that order) run the following command:
 
-  ![img](image/README/1646974363291.png)
-* **Move between branches:**
-
-  ![img](image/README/1646974525669.png)
-* **Merge a branch into another one:**
-
-  ![](image/README/1646974584754.png)
-
-    * NOTE: We will only merge into main through pull request
+```Docker
+docker compose up
+```
