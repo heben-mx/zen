@@ -11,7 +11,7 @@ ___
 
 > It's the easiest way of getting started with Zen
 
-- On both ***front*** and ***back***  folders (in that order) run the following command:
+- On both ***back*** and ***front***  folders (in that order) run the following command:
 
 ```Docker
 docker compose up
