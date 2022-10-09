@@ -67,9 +67,12 @@ jobs:
           aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
 
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true
+        run: |
+          aws ecs update-service --cluster Zen --service API --force-new-deployment
+
+        #uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        # with:
+        #   task-definition: ${{ env.ECS_TASK_DEFINITION }}
+        #   service: ${{ env.ECS_SERVICE }}
+        #   cluster: ${{ env.ECS_CLUSTER }}
+        #   wait-for-service-stability: true
