@@ -68,7 +68,8 @@ jobs:
 
       - name: Deploy Amazon ECS task definition
         run: |
-          aws ecs stop-task --cluster "my-cluster" --task $(aws ecs list-tasks --cluster "my-cluster" --service "my-service" --output text --query taskArns[0])
+          aws ecs stop-task --cluster Zen --task $(aws ecs list-tasks --cluster Zen --service API --output text --query taskArns[0]) |
+          aws ecs run-task --task-definition API-SpringBoot
 
         #uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         # with:
