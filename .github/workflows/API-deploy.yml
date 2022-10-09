@@ -63,7 +63,6 @@ jobs:
 
       - name: Get task id
         id: task-id
-        env: 
         run: | 
           echo "::set-output name=id::$(aws ecs list-tasks --cluster Zen --service API --output text --query taskArns[0])"
 
