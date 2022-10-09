@@ -44,7 +44,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: Push Docker image
+    needs: push_to_registry
     runs-on: ubuntu-latest
     environment: production
 
