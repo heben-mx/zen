@@ -44,6 +44,7 @@ jobs:
 
   deploy:
     name: Deploy
+    depends-on: push_to_registry
     runs-on: ubuntu-latest
     environment: production
 
