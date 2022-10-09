@@ -1,9 +1,13 @@
-name: Publish Docker image
+name: Publish API Docker Image
 
 on:
   push:
+    paths:
+      - "back/**"      
     branches: [ "main" ]
   pull_request:
+    paths:
+      - "back/**" 
     branches: [ "main" ]
 
   release:
