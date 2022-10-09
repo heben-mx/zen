@@ -15,9 +15,9 @@ on:
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECS_SERVICE: zen-database                 # set this to your Amazon ECS service name
+  ECS_SERVICE: API                 # set this to your Amazon ECS service name
   ECS_CLUSTER: Zen                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: aws-api-task-definition.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: zen-API
 
@@ -58,18 +58,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@97587c9d45a4930bf0e3da8dd2feb2a463cf4a3a
-        with:
-          task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ env.CONTAINER_NAME }}
-          image: fredude/zen-api
+      - name: Get task id
+        id: task-id
+        run: | 
+          echo "::set-output name=id::$(aws ecs list-tasks --cluster Zen --service API --output text --query taskArns[0])"
 
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true
+        run: aws ecs stop-task --cluster Zen --task ${{ steps.task-id.outputs.id }}
