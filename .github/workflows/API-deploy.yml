@@ -67,7 +67,8 @@ jobs:
       #     aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
 
       - name: Deploy Amazon ECS task definition
-        run: aws ecs update-service --cluster Zen --service API --force-new-deployment
+        run: |
+          aws ecs stop-task --cluster "my-cluster" --task $(aws ecs list-tasks --cluster "my-cluster" --service "my-service" --output text --query taskArns[0])
 
         #uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         # with:
