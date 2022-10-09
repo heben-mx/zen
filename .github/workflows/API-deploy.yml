@@ -64,5 +64,5 @@ jobs:
         run: | 
           echo "::set-output name=id::$(aws ecs list-tasks --cluster Zen --service API --output text --query taskArns[0])"
 
-      - name: Deploy Amazon ECS task definition
+      - name: Restart ECS service using new image
         run: aws ecs stop-task --cluster Zen --task ${{ steps.task-id.outputs.id }}
