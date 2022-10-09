@@ -17,7 +17,7 @@ env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECS_SERVICE: zen-database                 # set this to your Amazon ECS service name
   ECS_CLUSTER: Zen                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .aws/aws-api-task-definition.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: aws/aws-api-task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: zen-API
 
