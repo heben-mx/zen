@@ -51,11 +51,6 @@ jobs:
     environment: production
 
     steps:
-      - name: Download task definition
-        id: ECS_TASK_DEFINITION
-        run: |
-          aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
-
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -65,6 +60,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
+
+      - name: Download task definition
+        id: ECS_TASK_DEFINITION
+        run: |
+          aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
