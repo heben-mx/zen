@@ -2,4 +2,4 @@
 
 ## Architecture
 
-![back-end]("./docs/images/arch.png")
+![back-end]("docs/images/arch.PNG")
