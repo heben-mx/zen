@@ -65,10 +65,6 @@
     "placementConstraints": [],
     "memory": null,
     "taskRoleArn": "arn:aws:iam::496513429028:role/ecsTaskExecutionRole",
-    "compatibilities": [
-      "EXTERNAL",
-      "EC2"
-    ],
     "taskDefinitionArn": "arn:aws:ecs:us-east-1:496513429028:task-definition/API-SpringBoot:10",
     "family": "API-SpringBoot",
     "requiresAttributes": [
