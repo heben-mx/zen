@@ -18,7 +18,7 @@ env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECS_SERVICE: API                 # set this to your Amazon ECS service name
   ECS_CLUSTER: Zen                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: task-definition.json # set this to the path to your Amazon ECS task definition
+#  ECS_TASK_DEFINITION: task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: zen-API
 
@@ -61,14 +61,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Download task definition
-        id: ECS_TASK_DEFINITION
-        run: |
-          aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
+      # - name: Download task definition
+      #   id: ECS_TASK_DEFINITION
+      #   run: |
+      #     aws ecs describe-task-definition --task-definition API-SpringBoot --query taskDefinition > ${{ env.ECS_TASK_DEFINITION }}
 
       - name: Deploy Amazon ECS task definition
-        run: |
-          aws ecs update-service --cluster Zen --service API --force-new-deployment
+        run: aws ecs update-service --cluster Zen --service API --force-new-deployment
 
         #uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         # with:
