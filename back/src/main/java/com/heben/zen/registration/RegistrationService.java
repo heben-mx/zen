@@ -7,6 +7,7 @@ import com.heben.zen.registration.token.ConfirmationTokenService;
 import com.heben.zen.security.Response;
 import com.heben.zen.user.User;
 import com.heben.zen.user.UserService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,8 @@ public class RegistrationService {
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
     private final EmailService emailService;
+    @Value("${host}")
+    private String domain;
 
     RegistrationService(UserService userService,
                         EmailValidator emailValidator,
@@ -45,7 +48,7 @@ public class RegistrationService {
                 request.getPassword(),
                 request.getUserRole()
         ));
-        String link = "http://localhost:8080/api/v1/registration/confirm?token=" + token;
+        String link = "http://" + domain + ":8080/api/v1/registration/confirm?token=" + token;
         emailSender.send("Confirm your Zen account",
                 request.getEmail(),
                 emailService.buildRegistrationConfirmationEmail(request.getName(),
